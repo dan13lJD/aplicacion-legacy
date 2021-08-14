@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--Tab widget to select the tab-->
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--FrameLayout which contains the data of the activity-->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <ListView
+                        android:id="@+id/mobile_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                    </ListView>
+                </LinearLayout>
+
+                <!--for tab 2-->
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EEF8EE"
+                    android:orientation="vertical">
+
+                    <!--Text View for applying the text to the tab-->
+                    <GridView
+                        android:id="@+id/idGVcourses"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:horizontalSpacing="6dp"
+                        android:numColumns="2"
+                        android:verticalSpacing="6dp" />
+                </LinearLayout>
+
+                <!--for tab 3-->
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#E5F1F4"
+                    android:orientation="vertical">
+
+                    <!--Text View for applying the text to the tab-->
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp" >
+                        <EditText
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/reminder" />
+                        <Spinner
+                            android:id="@+id/dates"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/name"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toLeftOf="@+id/times" />
+                        <Spinner
+                            android:id="@id/times"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/name"
+                            android:layout_alignParentRight="true" />
+                        <Button
+                            android:layout_width="96dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/times"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/done" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
